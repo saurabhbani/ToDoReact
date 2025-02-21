@@ -1,9 +1,42 @@
-import React from 'react'
-
+import React, { useState } from "react";
+import Todo from "./Todo";
+import ToDOList from "./ToDOList";
+import "./App.css"
 function App() {
+  const [listToDo, setListToDo] = useState([]);
+
+  const addList = (inputtext) => {
+    setListToDo([...listToDo, inputtext]);
+  };
+
+  const deleteItem = (key) => {
+    const newList = [...listToDo];
+    newList.splice(key, 1);
+    setListToDo([...newList]);
+  };
+
   return (
-    <div>App</div>
-  )
+    <>
+      <div className="main-container">
+        <div className="center-container">
+          <Todo addList={addList} />
+          <h1 className="app-heading">TODO</h1>
+          <hr/>
+        </div>
+        {listToDo.map((listItem, index) => {
+          return (
+            <ToDOList
+              item={listItem}
+              index={index}
+              key={index}
+              deleteItem={deleteItem}
+            />
+          );
+        })}
+      </div>
+    </>
+  );
 }
 
-export default App
+
+export default App;
