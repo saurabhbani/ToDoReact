@@ -10,6 +10,8 @@ body{
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-image: url('imgg.jpg');
+  background-size: cover;
 }
 .center-container{
   height: 500px;
@@ -17,7 +19,7 @@ body{
 }
 .app-heading{
   padding: 4px;
-  color: white;  
+  color: grey;  
   font-family: 'Mulish', sans-serif;
   text-transform: uppercase;
 }
@@ -41,12 +43,12 @@ body{
 .add-btn{
   width:40px;
   height:40px;
-  border-radius: 50%;
+  border-radius: 30%;
   border:none;
   background-color:#316fc1;
   color: white;
   font-weight: bolder;
-  font-size: larger;
+  font-size: 30px;
   margin-left: 10px;  
   cursor: pointer;
   box-shadow: 0px 5px 10px rgba(11, 10, 10, 0.3);
@@ -54,6 +56,13 @@ body{
 }
 .add-btn:active{
   box-shadow: none;
+}
+.add-btn:disabled{
+  background-color: #333;
+  cursor: auto;
+}
+.add-btn:hover{
+  opacity: 0.8;
 }
 .list-container{
   display: flex;
@@ -63,8 +72,7 @@ body{
 .list-item{
   list-style-type: none;
   /* background-color: #596e8b; */
-  border:2px solid rgb(161, 158, 158);
-  color:white;
+  border:2px solid rgb(68, 67, 67);
   padding:3px;
   padding-left: 5px;
   border-radius: 5px; 

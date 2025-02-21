@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Todo from "./Todo";
-import ToDoList from "./ToDOList";
+import ToDoList from "./ToDoList";
 import "./App.css"
 function App() {
   const [listToDo, setListToDo] = useState([]);
@@ -24,12 +24,12 @@ function App() {
           <hr/>
         {listToDo.map((listItem, index) => {
           return (
-          <ToDoList
-          item={listItem}
+            <ToDoList
+              item={listItem}
               index={index}
               key={index}
               deleteItem={deleteItem}
-              />
+            />
           );
         })}
         </div>
@@ -37,6 +37,5 @@ function App() {
     </>
   );
 }
-
 
 export default App;
