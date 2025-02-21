@@ -1,6 +1,6 @@
 import React from "react";
 
-function ToDOList(props) {
+function ToDoList(props) {
   return (
     <>
       <li className="list-item">
@@ -18,4 +18,4 @@ function ToDOList(props) {
   );
 }
 
-export default ToDOList;
+export default ToDoList;

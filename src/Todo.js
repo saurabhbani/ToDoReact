@@ -4,6 +4,21 @@ function Todo(props) {
   const [inputtext, setinputText] = useState("");
   const [disabled, setDisabled] = useState(true);
 
+  const handleAddClick = () => {
+    if (inputtext.trim() !== "") {
+      props.addList(inputtext);
+      setinputText("");
+      setDisabled(true);
+    }
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleAddClick();
+    }
+  };
+
+
   return (
     <>
       <div className="input-container">
@@ -15,19 +30,16 @@ function Todo(props) {
             setinputText(e.target.value);
             setDisabled(e.target.value.trim() === "");
           }}
+          onKeyDown={handleKeyDown}
           placeholder="Enter your todo"
         />
-        <button
-          disabled={disabled}
-          className="add-btn"
-          onClick={() => {
-            props.addList(inputtext);
-            setinputText("");
-            setDisabled(true); 
-          }}
-        >
-          +
-        </button>
+       <button
+        disabled={disabled}
+        className="add-btn"
+        onClick={handleAddClick}
+      >
+        +
+      </button>
       </div>
     </>
   );
