@@ -22,7 +22,6 @@ function App() {
           <Todo addList={addList} />
           <h1 className="app-heading">TODO</h1>
           <hr/>
-        </div>
         {listToDo.map((listItem, index) => {
           return (
           <ToDoList
@@ -33,6 +32,7 @@ function App() {
               />
           );
         })}
+        </div>
       </div>
     </>
   );
