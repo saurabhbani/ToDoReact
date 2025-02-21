@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Todo from "./Todo";
-import ToDOList from "./ToDOList";
+import ToDoList from "./ToDOList";
 import "./App.css"
 function App() {
   const [listToDo, setListToDo] = useState([]);
@@ -25,12 +25,12 @@ function App() {
         </div>
         {listToDo.map((listItem, index) => {
           return (
-            <ToDOList
-              item={listItem}
+          <ToDoList
+          item={listItem}
               index={index}
               key={index}
               deleteItem={deleteItem}
-            />
+              />
           );
         })}
       </div>
